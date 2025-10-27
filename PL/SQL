@@ -1,0 +1,21 @@
+SET SERVEROUTPUT ON;
+DECLARE
+    A NUMBER := 0;
+    B NUMBER := 1;
+    C NUMBER;
+    N NUMBER;
+BEGIN
+    N := &N;  
+    DBMS_OUTPUT.PUT(A || ' ' || B || ' ');
+    
+    FOR I IN 3..N LOOP
+        C := A + B;
+        DBMS_OUTPUT.PUT(C || ' ');
+        A := B;
+        B := C;
+    END LOOP;
+    
+    DBMS_OUTPUT.NEW_LINE;  
+END;
+/
+
